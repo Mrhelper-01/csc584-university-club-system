@@ -223,7 +223,7 @@ For full cardinalities and attributes, see `ERD-University-Club-Management.png`.
 ---
 
 **Developed by:** Zhanyar Dldar • Danyal Soran • Yusf Mhamad  
-**Course:** CSC584 – Web Programming  
+**Course:** Enterprise Programming (CSC584) 
 **University:** qaiwan international universty  
 **Date:** November 2025
 ```
