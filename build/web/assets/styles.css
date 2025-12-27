@@ -1,0 +1,510 @@
+/* ===== MODERN UNIVERSITY CLUB SYSTEM ===== */
+
+/* 1. Variables & Reset */
+:root {
+    /* Modern Color Palette */
+    --primary: #2c3e50;       /* Dark Blue - Professional */
+    --secondary: #3498db;     /* Bright Blue - Action */
+    --accent: #e74c3c;        /* Red - Important */
+    --success: #2ecc71;       /* Green - Success */
+    --warning: #f39c12;       /* Orange - Warning */
+    --light: #ecf0f1;         /* Light Gray */
+    --dark: #2c3e50;          /* Dark Text */
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+    --border-radius: 10px;
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 2. Header with Animation */
+header {
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInDown 0.8s ease;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradient-secondary);
+    animation: shimmer 2s infinite;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header h1::before {
+    content: '🏛️';
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* 3. Navigation - Modern */
+nav {
+    background: var(--white);
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    animation: slideInLeft 0.8s ease;
+}
+
+nav a {
+    color: var(--primary);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    transition: var(--transition);
+    position: relative;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav a:hover {
+    background: var(--secondary);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+nav a::after {
+    content: '›';
+    margin-left: 5px;
+    opacity: 0.7;
+}
+
+/* 4. Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease;
+}
+
+section {
+    background: var(--white);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* 5. KPI Cards - Modern */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.kpi-box {
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--secondary);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.kpi-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(52, 152, 219, 0.2);
+}
+
+.kpi-box h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.kpi-value {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin: 15px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: pulse 2s infinite;
+}
+
+/* 6. Buttons - Modern */
+.button, .action-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--gradient-secondary);
+    color: var(--white);
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover, .action-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(245, 87, 108, 0.3);
+    color: var(--white);
+}
+
+.button::before, .action-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.button:hover::before, .action-link:hover::before {
+    left: 100%;
+}
+
+/* 7. Forms - Modern */
+.form-placeholder {
+    background: var(--light);
+    padding: 35px;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--secondary);
+    animation: slideInRight 0.8s ease;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    transform: translateY(-2px);
+}
+
+/* 8. Tables - Modern */
+.table-placeholder {
+    overflow-x: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.8s ease;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--white);
+}
+
+th {
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+td {
+    padding: 16px 15px;
+    border-bottom: 1px solid var(--light);
+    transition: var(--transition);
+}
+
+tr:hover td {
+    background: rgba(52, 152, 219, 0.05);
+    transform: scale(1.01);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* 9. Action Grid - Modern */
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.action-link {
+    background: var(--gradient-primary);
+    text-align: center;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.action-link i {
+    font-size: 2rem;
+}
+
+/* 10. Footer - Modern */
+footer {
+    background: var(--primary);
+    color: var(--white);
+    padding: 25px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    margin-top: 40px;
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.8s ease;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/* 11. Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* 12. Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    section {
+        padding: 20px;
+    }
+}
+
+/* 13. Loading Animation */
+.loading-spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--light);
+    border-top: 5px solid var(--secondary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 14. Status Indicators */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    gap: 8px;
+}
+
+.status-active {
+    background: rgba(46, 204, 113, 0.15);
+    color: #27ae60;
+}
+
+.status-inactive {
+    background: rgba(231, 76, 60, 0.15);
+    color: #c0392b;
+}
+
+.status-pending {
+    background: rgba(243, 156, 18, 0.15);
+    color: #d35400;
+}
+
+/* 15. Icons */
+.icon {
+    display: inline-block;
+    font-size: 1.2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.icon-user::before { content: '👤'; }
+.icon-club::before { content: '🏛️'; }
+.icon-event::before { content: '📅'; }
+.icon-dashboard::before { content: '📊'; }
+.icon-success::before { content: '✅'; }
+.icon-error::before { content: '❌'; }
+.icon-warning::before { content: '⚠️'; }
+.icon-info::before { content: 'ℹ️'; }
