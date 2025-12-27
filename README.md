@@ -689,6 +689,6 @@ For any issues or questions regarding this project, please contact the developme
 
 **Developed with ❤️ by Team CSC584 - University Club Management System**
 
-*© 2024 University Club Management System Team. All rights reserved.*
+*© 2025 University Club Management System Team. All rights reserved.*
 *Last Updated: December 2025*
 ```
