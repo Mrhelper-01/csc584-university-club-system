@@ -79,35 +79,48 @@ A comprehensive web application for managing university clubs, memberships, even
 
 ### **MVC Pattern Implementation**
 ```
-┌─────────────────────────────────────────────┐
-│                    VIEW                     │
-│         (JSP Pages - Presentation)          │
-│  • login.jsp, register.jsp                  │
-│  • dashboard.jsp                            │
-│  • clubs/list.jsp, create.jsp, edit.jsp     │
-│  • events/list.jsp, create.jsp              │
-│  • members/list.jsp                         │
-└─────────────────┬───────────────────────────┘
-                  │
-┌─────────────────▼───────────────────────────┐
-│                 CONTROLLER                  │
-│         (Servlets - Business Logic)         │
-│  • LoginServlet.java                       │
-│  • RegisterServlet.java                    │
-│  • LogoutServlet.java                      │
-│  • DashboardServlet.java                   │
-│  • ClubServlet.java                        │
-│  • EventServlet.java                       │
-└─────────────────┬───────────────────────────┘
-                  │
-┌─────────────────▼───────────────────────────┐
-│                   MODEL                     │
-│      (JavaBeans & DAO - Data Layer)         │
-│  • User.java, Club.java                    │
-│  • UserDAO.java, ClubDAO.java              │
-│  • DBConnection.java                       │
-│  • MySQL Database                          │
-└─────────────────────────────────────────────┘
+VIEW (JSP Pages)
+├── login.jsp
+├── register.jsp
+├── dashboard.jsp
+├── clubs/
+│   ├── list.jsp
+│   ├── create.jsp
+│   ├── edit.jsp
+│   └── details.jsp
+├── events/
+│   ├── list.jsp
+│   ├── create.jsp
+│   ├── edit.jsp
+│   └── details.jsp
+└── members/
+    └── list.jsp
+
+CONTROLLER (Servlets)
+├── LoginServlet.java
+├── RegisterServlet.java
+├── LogoutServlet.java
+├── DashboardServlet.java
+├── ClubServlet.java
+└── EventServlet.java
+
+MODEL (Java Classes)
+├── Entities
+│   ├── User.java
+│   ├── Club.java
+│   └── Event.java
+├── DAOs
+│   ├── UserDAO.java
+│   ├── ClubDAO.java
+│   └── EventDAO.java
+└── DBConnection.java
+
+DATABASE
+└── MySQL (university_club_db)
+    ├── users table
+    ├── clubs table
+    ├── club_members table
+    └── events table
 ```
 
 ### **Database Schema**
